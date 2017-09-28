@@ -9,7 +9,7 @@ chown -R 1000:1000 /src/artifacts;
 cp bazel-bin/scripts/packages/heron-api-install.sh /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-client-install.sh /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-tools-install.sh /src/artifacts/;
-cp bazel-bin/scripts/packages/heron-api-.tar.gz /src/artifacts/;
+cp bazel-bin/scripts/packages/heron-api.tar.gz /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-core.tar.gz /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-client.tar.gz /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-tools.tar.gz /src/artifacts/;
