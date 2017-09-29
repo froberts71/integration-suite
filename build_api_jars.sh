@@ -10,6 +10,8 @@ bazel build -c opt --config=ubuntu heron/api/src/java:all
 bazel build -c opt --config=ubuntu heron/spi/src/java:all
 bazel build -c opt --config=ubuntu storm-compatibility/src/java:all
 
+VERSION_TAG=$gitParam
+
 echo "Found Version Tag $VERSION_TAG"
 
 mkdir -p jar_release_bundle/$VERSION_TAG

@@ -9,6 +9,8 @@ DEPLOY_URL="https://oss.sonatype.org/service/local/staging/deploy/maven2/"
 
 echo "Deploying to ... $DEPLOY_URL"
 
+VERSION_TAG=$gitParam
+
 echo "Found Version Tag $VERSION_TAG"
 
 echo "Starting deploy ..."
