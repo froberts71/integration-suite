@@ -13,7 +13,7 @@ echo "python bazel_configure.py" >> docker_command.txt;
 echo "bazel build -c opt --config=centos scripts/packages:binpkgs" >> docker_command.txt;
 echo "bazel build -c opt --config=centos scripts/packages:tarpkgs" >> docker_command.txt;
 echo "chown $USERID:$GROUPID bazel-bin/scripts/packages/*" >> docker_command.txt;
-echo "mkdir /src/artifactss" >> docker_command.txt;
+echo "mkdir /src/artifacts" >> docker_command.txt;
 echo "chown -R $USERID:$GROUPID /src/artifacts" >> docker_command.txt;
 echo "cp bazel-bin/scripts/packages/heron-api-install.sh /src/artifacts/" >> docker_command.txt;
 echo "cp bazel-bin/scripts/packages/heron-client-install.sh /src/artifacts/" >> docker_command.txt;
