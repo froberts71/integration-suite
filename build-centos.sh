@@ -1,11 +1,11 @@
 export USER=build-server;
 cd /src;
 python bazel_configure.py;
-bazel build -c opt --config=ubuntu scripts/packages:binpkgs;
-bazel build -c opt --config=ubuntu scripts/packages:tarpkgs;
-chown 1000:1000 bazel-bin/scripts/packages/*;
+bazel build -c opt --config=centos scripts/packages:binpkgs;
+bazel build -c opt --config=centos scripts/packages:tarpkgs;
+chown $USERID:$GROUPID bazel-bin/scripts/packages/*;
 mkdir /src/artifacts;
-chown -R 1000:1000 /src/artifacts;
+chown -R $USERID:$GROUPID /src/artifacts;
 cp bazel-bin/scripts/packages/heron-api-install.sh /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-client-install.sh /src/artifacts/;
 cp bazel-bin/scripts/packages/heron-tools-install.sh /src/artifacts/;
