@@ -6,9 +6,9 @@ set -o pipefail
 echo "Starting Heron Maven Jars Process"
 
 echo "Make jar components"
-bazel build -c opt --config=ubuntu heron/api/src/java:all
-bazel build -c opt --config=ubuntu heron/spi/src/java:all
-bazel build -c opt --config=ubuntu storm-compatibility/src/java:all
+bazel build heron/api/src/java:all
+bazel build heron/spi/src/java:all
+bazel build storm-compatibility/src/java:all
 
 VERSION_TAG=$gitParam
 
