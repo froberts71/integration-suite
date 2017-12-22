@@ -15,7 +15,5 @@ echo "bazel build -c opt --config=ubuntu scripts/packages:tarpkgs" >> docker_com
 echo "chown $USERID:$GROUPID bazel-bin/scripts/packages/*" >> docker_command.txt;
 echo "mkdir /src/artifacts" >> docker_command.txt;
 echo "chown -R $USERID:$GROUPID /src/artifacts" >> docker_command.txt;
-echo "cp bazel-bin/scripts/packages/heron-client-install.sh /src/artifacts/" >> docker_command.txt;
-echo "cp bazel-bin/scripts/packages/heron-tools-install.sh /src/artifacts/" >> docker_command.txt;
-echo "cp bazel-bin/scripts/packages/heron-client.tar.gz /src/artifacts/" >> docker_command.txt;
-echo "cp bazel-bin/scripts/packages/heron-tools.tar.gz /src/artifacts/" >> docker_command.txt;
+echo "cp bazel-bin/scripts/packages/heron-install.sh /src/artifacts/" >> docker_command.txt;
+echo "cp bazel-bin/scripts/packages/heron.tar.gz /src/artifacts/" >> docker_command.txt;
