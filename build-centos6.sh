@@ -10,7 +10,10 @@ echo "export HERON_BUILD_VERSION=${GIT_TAG}" >> docker_command.txt;
 echo "export USER=build-server" >> docker_command.txt;
 echo "cd /src" >> docker_command.txt;
 echo "python bazel_configure.py" >> docker_command.txt;
-echo "scl enable devtoolset-3 bash" >> docker_command.txt;
+
+echo "export CC=/opt/rh/devtoolset-3/root/usr/bin/gcc" >> docker_command.txt;
+echo "export CXX=/opt/rh/devtoolset-3/root/usr/bin/g++" >> docker_command.txt;
+
 echo "bazel build -c opt --config=centos scripts/packages:binpkgs" >> docker_command.txt;
 echo "bazel build -c opt --config=centos scripts/packages:tarpkgs" >> docker_command.txt;
 echo "chown $USERID:$GROUPID bazel-bin/scripts/packages/*" >> docker_command.txt;
