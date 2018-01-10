@@ -1,0 +1,17 @@
+USERID=$(id -u $USER)
+GROUPID=$(id | awk 'BEGIN { FS = "[=(]" } ; { print $4 }')
+GIT_TAG=$gitParam
+
+echo "export USERID=$USERID" > docker_command.txt
+echo "export GROUPID=$GROUPID" >> docker_command.txt;
+echo "export HERON_BUILD_HOST=ci-server-01" >> docker_command.txt;
+echo "export HERON_BUILD_USER=release-agent1" >> docker_command.txt;
+echo "export HERON_BUILD_VERSION=${GIT_TAG}" >> docker_command.txt;
+echo "export USER=build-server" >> docker_command.txt;
+echo "cd /src" >> docker_command.txt;
+echo "python bazel_configure.py" >> docker_command.txt;
+echo "bazel build scripts/docker:heron" >> docker_command.txt;
+echo "chown $USERID:$GROUPID bazel-bin/scripts/docker/*" >> docker_command.txt;
+echo "mkdir /src/artifacts" >> docker_command.txt;
+echo "chown -R $USERID:$GROUPID /src/artifacts" >> docker_command.txt;
+echo "cp bazel-bin/scripts/docker/heron-layer.tar /src/artifacts/" >> docker_command.txt;
