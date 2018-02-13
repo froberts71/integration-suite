@@ -38,7 +38,7 @@ echo "Copy heron-api artifacts ... "
 cp ./release/heron-api-$VERSION_TAG.pom ./jar_release_bundle/$VERSION_TAG/heron-api/
 cp ./bazel-bin/heron/api/src/java/api-shaded.jar ./jar_release_bundle/$VERSION_TAG/heron-api/heron-api-$VERSION_TAG.jar
 cp ./bazel-bin/heron/api/src/java/heron-api-javadoc.zip ./jar_release_bundle/$VERSION_TAG/heron-api/heron-api-$VERSION_TAG-javadoc.jar
-cp ./bazel-bin/heron/api/src/java/libapi-java-src.jar ./jar_release_bundle/$VERSION_TAG/heron-api/heron-api-$VERSION_TAG-sources.jar
+cp ./bazel-bin/heron/api/src/java/libapi-java-low-level-functional-src.jar ./jar_release_bundle/$VERSION_TAG/heron-api/heron-api-$VERSION_TAG-sources.jar
 
 echo "Copy heron-spi artifacts ... "
 cp ./release/heron-spi-$VERSION_TAG.pom ./jar_release_bundle/$VERSION_TAG/heron-spi/
